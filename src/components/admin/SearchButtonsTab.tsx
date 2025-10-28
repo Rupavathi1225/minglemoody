@@ -98,7 +98,7 @@ const SearchButtonsTab = () => {
             </div>
             <div>
               <Label className="text-sm font-medium text-foreground mb-2">
-                Web Result Page
+                Web Result Page (wr=)
               </Label>
               <Select
                 value={newButton.webResultPage.toString()}
@@ -110,7 +110,7 @@ const SearchButtonsTab = () => {
                 <SelectContent>
                   {[1, 2, 3, 4, 5].map((num) => (
                     <SelectItem key={num} value={num.toString()}>
-                      Page {num}
+                      wr={num}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -139,7 +139,7 @@ const SearchButtonsTab = () => {
                   {button.position}. {button.title}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">
-                  {button.link || `/webresult?p=${button.webResultPage}`} → Page {button.webResultPage}
+                  {button.link || `/webresult${button.webResultPage}`} → wr={button.webResultPage}
                 </div>
               </div>
               <Button

@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { getWebResultsByPage, WebResult } from "@/lib/storage";
 import { Button } from "@/components/ui/button";
 
-const WebResultPage = () => {
+const WebResult4 = () => {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const pageNumber = parseInt(searchParams.get("p") || "1");
   const [results, setResults] = useState<WebResult[]>([]);
+  const pageNumber = 4;
 
   useEffect(() => {
     setResults(getWebResultsByPage(pageNumber));
-  }, [pageNumber]);
+  }, []);
 
   const sponsoredResults = results.filter(r => r.sponsored);
   const regularResults = results.filter(r => !r.sponsored);
@@ -164,4 +163,4 @@ const WebResultPage = () => {
   );
 };
 
-export default WebResultPage;
+export default WebResult4;

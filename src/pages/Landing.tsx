@@ -18,7 +18,7 @@ const Landing = () => {
     if (button.link) {
       navigate(button.link);
     } else {
-      navigate(`/webresult?p=${button.webResultPage}`);
+      navigate(`/webresult${button.webResultPage}`);
     }
   };
 

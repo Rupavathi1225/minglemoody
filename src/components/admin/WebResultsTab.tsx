@@ -108,7 +108,7 @@ const WebResultsTab = () => {
           <SelectContent>
             {[1, 2, 3, 4, 5].map((num) => (
               <SelectItem key={num} value={num.toString()}>
-                Page {num}
+                wr={num}
               </SelectItem>
             ))}
           </SelectContent>
@@ -206,7 +206,7 @@ const WebResultsTab = () => {
       {/* Existing Results */}
       <div className="bg-card border border-border rounded-lg p-8">
         <h3 className="text-xl font-bold text-foreground mb-4">
-          Existing Results (Page {selectedPage})
+          Existing Results (wr={selectedPage})
         </h3>
         
         <div className="space-y-4">
